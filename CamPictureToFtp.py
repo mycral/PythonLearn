@@ -37,5 +37,5 @@ while cap.isOpened():
 
 # 释放摄像头资源
 cap.release()
-out.release()
+#out.release()
 cv2.destroyAllWindows()
