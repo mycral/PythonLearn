@@ -27,7 +27,7 @@ while cap.isOpened():
     if isSuccess:
         #cv2.imshow("My Capture",frame)
         #out.write(frame)
-        fnamestr = datetime.datetime.strftime(time1,'%Y-%m-%d %H-%M-%S')+".jpg"
+        fnamestr = datetime.datetime.strftime(datetime.datetime.now(),'%Y-%m-%d %H-%M-%S')+".jpg"
         cv2.imwrite(fnamestr, frame)
 
     # 实现按下“q”键退出程序
