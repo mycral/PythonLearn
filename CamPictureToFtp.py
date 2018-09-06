@@ -29,8 +29,8 @@ while cap.isOpened():
         #out.write(frame)
         fnamestr = datetime.datetime.strftime(datetime.datetime.now(),'%Y-%m-%d %H-%M-%S')+".jpg"
         cv2.imwrite(fnamestr, frame)
-        ftpserver= ftpconnect("www.xunxinniubi.top","guoliulong","870112")
-        uploadfile(ftpserver,"./"+fnamestr,"./"+fnamestr)
+        ftpserver= FTPUtil.ftpconnect("www.xunxinniubi.top","guoliulong","870112")
+        FTPUtil.uploadfile(ftpserver,"./"+fnamestr,"./"+fnamestr)
         ftp.quit()
 
     # 实现按下“q”键退出程序
