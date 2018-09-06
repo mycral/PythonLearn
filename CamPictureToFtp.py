@@ -27,11 +27,12 @@ while cap.isOpened():
     if isSuccess:
         #cv2.imshow("My Capture",frame)
         #out.write(frame)
+		cap.release()
         fnamestr = datetime.datetime.strftime(datetime.datetime.now(),'%Y-%m-%d %H-%M-%S')+".jpg"
         cv2.imwrite(fnamestr, frame)
         ftpserver= FTPUtil.ftpconnect("www.xunxinniubi.top","guoliulong","870112")
         FTPUtil.uploadfile(ftpserver,"./"+fnamestr,"./"+fnamestr)
-        ftp.quit()
+        ftpserver.quit()
 
     # 实现按下“q”键退出程序
     #if cv2.waitKey(1)&0xFF == ord('q'):
@@ -39,6 +40,6 @@ while cap.isOpened():
     break
 
 # 释放摄像头资源
-cap.release()
+
 #out.release()
 cv2.destroyAllWindows()
