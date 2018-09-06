@@ -27,7 +27,7 @@ while cap.isOpened():
     if isSuccess:
         #cv2.imshow("My Capture",frame)
         #out.write(frame)
-		cap.release()
+        cap.release()
         fnamestr = datetime.datetime.strftime(datetime.datetime.now(),'%Y-%m-%d %H-%M-%S')+".jpg"
         cv2.imwrite(fnamestr, frame)
         ftpserver= FTPUtil.ftpconnect("www.xunxinniubi.top","guoliulong","870112")
